@@ -1,6 +1,6 @@
-# my-carousel
+# vue-pay-keyboard
 
-> 显示多个图片
+> A Vue.js project
 
 ## Build Setup
 
