@@ -1,7 +1,7 @@
 {
   "name": "vue-my-carousel",
   "description": "显示多张图片的轮播",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "author": "Taro <wangys@xipudata.com>",
   "license": "MIT",
   "private": false,
