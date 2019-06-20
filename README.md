@@ -1,18 +1,17 @@
-# vue-pay-keyboard
+# vue-my-carousel
 
-> A Vue.js project
+> 轮播图，可设置多张同时显示
 
-## Build Setup
+## 插件使用方法：
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+```
+#安装插件
+npm i vue-my-carousel
 
-# build for production with minification
-npm run build
+#在main.js引入插件
+import MyCarousel from 'vue-my-carousel'
+Vue.use(MyCarousel)
 ```
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).

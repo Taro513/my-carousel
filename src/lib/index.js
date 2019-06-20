@@ -7,7 +7,7 @@ const carousel = {
     // 虽然没有明确规定用$开头  但是大家都默认遵守这个规定
 
     if (typeof window !== 'undefined' && window.Vue) {
-      window.Vue.use(paykeyboard);
+      window.Vue.use(carousel);
     }
   }
 }

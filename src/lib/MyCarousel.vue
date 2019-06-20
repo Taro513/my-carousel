@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: "MyCarousel",
+    name: "my-carousel",
     props: ['carouselList', 'interval', 'height', 'autoplay'],
     data() {
       return {
@@ -57,14 +57,14 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="stylus">
   .my-carousel
     position: relative
     width: 100%
     overflow: hidden
-    @for $i from 1 through 20
-      .my-carousel-item:nth-child($i)
-        transform: translateX(33.333vw * $i)
+    for row in 1 2 3 4 5
+      .my-carousel-item:nth-child({row})
+        transform: translateX(33.333vw * row)
   .my-carousel-item
     width: 33.33%
     background: #ccc
