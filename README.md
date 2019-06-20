@@ -1,6 +1,6 @@
 # carousel
 
-> A Vue.js project
+> 轮播图 一次展示多张图片
 
 ## Build Setup
 
@@ -16,6 +16,10 @@ Vue.use(MyCarousel);
 <my-carousel :autoplay="true" :height="200" :interval="5000" :show-size="3" :carousel-list="dataList"></my-carousel>
 ```
 
+demo如图
+
+![Image text](/src/assets/demo.png)
+
 参数说明：
 autoplay 为true时自动播放
 
@@ -26,9 +30,7 @@ interval 轮播的时间间隔
 show-size 轮播一页显示几个
 
 carousel-list 轮播的内容
-
-
-格式如下：
+数据格式如下：
 
 ```
 [

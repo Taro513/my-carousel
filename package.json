@@ -1,7 +1,7 @@
 {
   "name": "vue-my-carousel",
-  "description": "A Vue.js project",
-  "version": "1.0.8",
+  "description": "显示多张图片的轮播",
+  "version": "1.0.10",
   "author": "Taro <wangys@xipudata.com>",
   "license": "MIT",
   "private": false,

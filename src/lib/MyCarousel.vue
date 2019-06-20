@@ -1,7 +1,7 @@
 <template>
   <div class="my-carousel" :style="'height:'+height+'px;'">
-    <div v-for="(item,index) in carouselListData" :key="index" class="my-carousel-item" :style="'transform: translateX('+(100/showSize) * index+'vw)'">
-      <img :src="item.url" alt="img"/>
+    <div v-for="(item,index) in carouselListData" :key="index" class="my-carousel-item" :style="'transform: translateX('+(100/(showSize || 1)) * index+'vw);width:'+(100/(showSize || 1))+'%'">
+      <img :src="item.url" alt="img" @click="window.open(item.link)">
     </div>
     <div class="arrow arrow-left" @click="next()">
       <i class="el-icon-arrow-right"></i>
@@ -23,18 +23,14 @@
         timmer: null
       }
     },
-    computed: {
-      // carouselListData() {
-      //   return JSON.parse(JSON.stringify(this.carouselList))
-      // }
-    },
     created() {
       this.carouselListData = JSON.parse(JSON.stringify(this.carouselList))
       if (this.autoplay && this.carouselListData.length > 0) {
         this.timmer = setInterval(() => {
           this.next()
-        }, this.interval)
+        }, this.interval || 5000)
       }
+
     },
     beforeDestroy() {
       if (this.timmer) {
@@ -65,7 +61,6 @@
   }
 
   .my-carousel-item {
-    width: 33.33%;
     background: #ccc;
     position: absolute;
     height: 100%;
