@@ -1,11 +1,15 @@
 {
-  "name": "vue-pay-keyboard",
+  "name": "vue-my-carousel",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "Taro <wangys@xipudata.com>",
   "license": "MIT",
   "private": false,
-
+  "main": "dist/vue-my-carousel.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Taro513/my-carousel.git"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"

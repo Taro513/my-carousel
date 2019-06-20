@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: "carousel",
+    name: "MyCarousel",
     props: ['carouselList', 'interval', 'height', 'autoplay'],
     data() {
       return {
