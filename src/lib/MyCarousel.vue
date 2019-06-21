@@ -1,13 +1,15 @@
 <template>
-  <div class="my-carousel" :style="'height:'+height+'px;'">
-    <div v-for="(item,index) in carouselListData" :key="index" class="my-carousel-item" :style="'transform: translateX('+(100/(showSize || 1)) * index+'vw);width:'+(100/(showSize || 1))+'%'">
-      <img :src="item.url" alt="img" @click="window.open(item.link)">
-    </div>
-    <div class="arrow arrow-left" @click="next()">
-      <i class="el-icon-arrow-right"></i>
-    </div>
-    <div class="arrow arrow-right" @click="last()">
-      <i class="el-icon-arrow-left"></i>
+  <div class="my-carousel" :style="'height:'+height+'px;'" ref="myCarousel">
+    <div v-if="show">
+      <div v-for="(item,index) in carouselListData" :key="index" class="my-carousel-item" :style="'transform: translateX('+(1 * parentWidth/(showSize || 1)) * index+'px);width:'+(100/(showSize || 1))+'%'">
+        <img :src="item.url" alt="img" @click="window.open(item.link)">
+      </div>
+      <div class="arrow arrow-left" @click="next()">
+        <i class="el-icon-arrow-right"></i>
+      </div>
+      <div class="arrow arrow-right" @click="last()">
+        <i class="el-icon-arrow-left"></i>
+      </div>
     </div>
   </div>
 
@@ -20,7 +22,9 @@
     data() {
       return {
         carouselListData: [],
-        timmer: null
+        timmer: null,
+        parentWidth:'100%',
+        show:false
       }
     },
     created() {
@@ -31,6 +35,10 @@
         }, this.interval || 5000)
       }
 
+    },
+    mounted(){
+      this.parentWidth = this.$refs.myCarousel.clientWidth
+      this.show = true
     },
     beforeDestroy() {
       if (this.timmer) {
