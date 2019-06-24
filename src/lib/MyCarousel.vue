@@ -2,7 +2,7 @@
   <div class="my-carousel" :style="'height:'+height+'px;'" ref="myCarousel">
     <div v-if="show">
       <div v-for="(item,index) in carouselListData" :key="index" class="my-carousel-item" :style="'transform: translateX('+(1 * parentWidth/(showSize || 1)) * index+'px);width:'+(100/(showSize || 1))+'%'">
-        <img :src="item.url" alt="img" @click="window.open(item.link)">
+        <img :src="item.url" alt="img" @click="newLink(item.link)">
       </div>
       <div class="arrow arrow-left" @click="next()">
         <i class="el-icon-arrow-right"></i>
@@ -38,6 +38,7 @@
     },
     mounted(){
       this.parentWidth = this.$refs.myCarousel.clientWidth
+      console.log(this.parentWidth)
       this.show = true
     },
     beforeDestroy() {
@@ -56,6 +57,9 @@
         this.carouselListData.splice(this.carouselListData.length - 1, 1);
         this.carouselListData = obj.concat(this.carouselListData);
       },
+      newLink(url){
+        window.location.href = url;
+      }
     },
 
   }

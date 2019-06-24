@@ -36,7 +36,7 @@ carousel-list 轮播的内容
 [
 {
  url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1519175636,579560806&fm=27&gp=0.jpg',//图片地址
- link: 'https://www.baidu.com',//后续做跳转
+ link: 'https://www.baidu.com',//点击跳转链接
 }
 ]
 
